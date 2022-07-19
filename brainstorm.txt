@@ -1,0 +1,21 @@
+First step is to make a 16x16 grid. We will get to the prompt later
+try to print a grid of divs that have x inside of them.
+
+
+for loop x 
+    for loop y
+        create an x div
+    create a new container for the new x divs
+
+flexbox column on the <div class=container>
+    <div>xxxxxxx</div>
+    <div>xxxxxxx</div>
+
+
+
+
+.square{
+    height: 5px;
+    width: 5px;
+}
+    
