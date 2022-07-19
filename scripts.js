@@ -1,7 +1,22 @@
 
+
 createSketchBox(100);
 
 
+
+
+document.querySelector(".sketch-resizer").addEventListener("click", () => {
+    let size = prompt("How big do you want this sketchpad. <= 100 please!")
+
+    if(size > 100){
+        alert("Too big! Try again!");
+        return;
+    }
+
+    clearSketchBox();
+    createSketchBox(size);
+
+});
 
 
 function boxTouched(boxElement){
