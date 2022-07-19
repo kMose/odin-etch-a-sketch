@@ -1,8 +1,9 @@
 .box{
     box-sizing: border-box;
-    height: 25px;
-    width: 25px;
-    border: 1px solid black;
+    height: 5px;
+    width: 5px;
+
+    
 }
 
 .box:hover{
@@ -15,12 +16,15 @@
 
 
 .container{
+    width: 960px;
     display: flex;
     flex-direction: column;
+    border: 1px solid black;
 }
 
 .line{
     display: flex;
     flex-direction: row;
+    flex: auto;
 }
 
