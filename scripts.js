@@ -4,13 +4,13 @@ let container = document.querySelector(".container");
 let newLine = document.createElement("div");
 
     
-for (let i = 0; i < 128; i++){
+for (let i = 0; i < 100; i++){
     // Creates a container to hold a line of boxes.
     newLine = document.createElement("div");
     newLine.classList.add("line");
     container.appendChild(newLine);
     
-    for(let j = 0; j < 128; j++){
+    for(let j = 0; j < 100; j++){
          // Creates the divs that are appended to the newLine div.
         box = document.createElement("div");
         box.classList.add("box")
@@ -25,4 +25,13 @@ boxes.forEach(box => box.addEventListener("mouseover", () => boxTouched(box)));
 
 function boxTouched(boxElement){
     boxElement.classList.add("touched-by-user");
+}
+
+function clearSketchBox(){
+    let element = document.querySelector(".container");
+    element.remove();
+}
+
+function createSketchBox(){
+    
 }

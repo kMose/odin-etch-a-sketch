@@ -19,3 +19,6 @@ flexbox column on the <div class=container>
     width: 5px;
 }
     
+
+need a function to remove grid
+need a function to remake grid with x by x number of boxes
