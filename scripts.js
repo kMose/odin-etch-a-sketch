@@ -53,4 +53,5 @@ function createSketchBox(size){
 
     boxes = document.querySelectorAll(".box");
     boxes.forEach(box => box.addEventListener("mouseover", () => boxTouched(box)));
+
 }

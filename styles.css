@@ -17,8 +17,17 @@
 
 .container{
     display: flex;
+    flex: auto;
+    width: 50vh;
     flex-direction: column;
     border: 1px solid black;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .line{
