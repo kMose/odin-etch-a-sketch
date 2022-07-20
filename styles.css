@@ -1,38 +1,41 @@
 .box{
+    display: flex;
     box-sizing: border-box;
-    height: 5px;
-    width: 5px;
-
-    
+    height: 10px;
+    width: 10px;
 }
 
-.box:hover{
-    background-color: black;
+.line{
+    display: flex;
+    min-height: 5px;
+    height: auto;
+    flex-direction: row;
+}
+
+.container{
+    display: flex;
+    flex: auto;
+    width: 500px;
+    height: 500px;
+    flex-direction: column;
+    border: 1px solid black;
+
+}
+
+.content{   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 .touched-by-user{
     background-color: black;
 }
 
-
-.container{
-    display: flex;
-    flex: auto;
-    width: 50vh;
-    flex-direction: column;
-    border: 1px solid black;
-}
-
-.content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.line{
+.button-row{
     display: flex;
     flex-direction: row;
-    flex: auto;
+    justify-content: center;
 }
 

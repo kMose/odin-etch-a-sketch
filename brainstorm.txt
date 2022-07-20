@@ -1,1 +1,2 @@
-we need to center the grid with a border
+features to add
+enable/disable grid.

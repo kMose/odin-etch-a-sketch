@@ -1,12 +1,23 @@
 
 
-createSketchBox(100);
+
+createSketchBox(50);
 
 
 
 
+
+
+
+// Sketch resizer
+// Adds an event listener to the sketch resize button. Prompts user for desired size.
+// Resizes the css height/width element so the boxes fit evenly within the sketchpad.
 document.querySelector(".sketch-resizer").addEventListener("click", () => {
-    let size = prompt("How big do you want this sketchpad. <= 100 please!")
+    let size = prompt("How many cells do you want in the sketchpad? Default is 50. Max is 100.");
+
+    if(size === ""){
+        size = 50;
+    }
 
     if(size > 100){
         alert("Too big! Try again!");
@@ -15,6 +26,15 @@ document.querySelector(".sketch-resizer").addEventListener("click", () => {
 
     clearSketchBox();
     createSketchBox(size);
+
+
+    let boxElement = document.querySelectorAll(".box");
+    boxSize = Math.round(500/size);
+
+    boxElement.forEach(box => {
+        box.style.height = `${boxSize}px`;
+        box.style.width = `${boxSize}px`;
+    });
 
 });
 
