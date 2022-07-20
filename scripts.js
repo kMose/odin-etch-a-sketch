@@ -63,6 +63,14 @@ document.querySelector(".sketch-resizer").addEventListener("click", () => {
 document.querySelector(".clear-button").addEventListener("click", () => {
     clearSketchBox()
     createSketchBox(size);
+
+    let boxElement = document.querySelectorAll(".box");
+    boxSize = Math.round(500/size);
+
+    boxElement.forEach(box => {
+        box.style.height = `${boxSize}px`;
+        box.style.width = `${boxSize}px`;
+    });
 });
 
 
