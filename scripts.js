@@ -5,8 +5,18 @@ createSketchBox(50);
 
 
 
+// Button listener to toggle grid boxes.
+document.querySelector(".grid-button").addEventListener("click", () => {
+    let boxElement = document.querySelectorAll(".box");
 
+    boxElement.forEach(box => {
+        if(box.style.border)
+        box.style.border = "";
+        else
+            box.style.border = "1px solid black";  
+    });
 
+});
 
 
 // Sketch resizer
