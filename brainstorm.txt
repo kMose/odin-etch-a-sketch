@@ -1,2 +1,8 @@
 features to add
-enable/disable grid.
+---enable/disable grid.
+rainbow rgb mode
+darken mode
+
+color boxes
+
+

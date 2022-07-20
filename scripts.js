@@ -1,7 +1,7 @@
+let crazyColorMode = false;
+let size = 50;
 
-
-
-createSketchBox(50);
+createSketchBox(size);
 
 
 
@@ -19,11 +19,23 @@ document.querySelector(".grid-button").addEventListener("click", () => {
 });
 
 
+// Button Listener to toggle crazy color mode.
+document.querySelector(".crazy-color-button").addEventListener("click", () => {
+    if (!crazyColorMode)
+        crazyColorMode = true;
+    else
+        crazyColorMode = false
+
+    console.log(crazyColorMode);
+});
+
+
+
 // Sketch resizer
 // Adds an event listener to the sketch resize button. Prompts user for desired size.
 // Resizes the css height/width element so the boxes fit evenly within the sketchpad.
 document.querySelector(".sketch-resizer").addEventListener("click", () => {
-    let size = prompt("How many cells do you want in the sketchpad? Default is 50. Max is 100.");
+    size = prompt("How many cells do you want in the sketchpad? Default is 50. Max is 100.");
 
     if(size === ""){
         size = 50;
@@ -48,9 +60,20 @@ document.querySelector(".sketch-resizer").addEventListener("click", () => {
 
 });
 
+document.querySelector(".clear-button").addEventListener("click", () => {
+    clearSketchBox()
+    createSketchBox(size);
+});
+
+
 
 function boxTouched(boxElement){
     boxElement.classList.add("touched-by-user");
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+
+    if (crazyColorMode)
+        boxElement.style.backgroundColor = `#${randomColor}`;
+
 }
 
 function clearSketchBox(){
