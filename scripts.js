@@ -1,5 +1,7 @@
 let crazyColorMode = false;
 let pencilMode = false;
+let customColorMode = false;
+let brushColorDropdown = document.querySelector("#color-selector");
 let size = 50;
 
 createSketchBox(size);
@@ -21,6 +23,7 @@ document.querySelector(".grid-button").addEventListener("click", () => {
 // Button Listener to toggle crazy color mode.
 document.querySelector(".crazy-color-button").addEventListener("click", () => {
     pencilMode = false;
+    customColorMode = false;
     
     if (!crazyColorMode)
         crazyColorMode = true;
@@ -34,6 +37,7 @@ document.querySelector(".crazy-color-button").addEventListener("click", () => {
 // Button Listener to toggle pencil mode.
 document.querySelector(".pencil-mode-button").addEventListener("click", () => {
     crazyColorMode = false;
+    customColorMode = false;
     
     if (!pencilMode)
         pencilMode = true;
@@ -41,6 +45,19 @@ document.querySelector(".pencil-mode-button").addEventListener("click", () => {
         pencilMode = false
 
     console.log(`pencil mode = ${pencilMode}`);
+});
+
+// Listener for brush change dropdown menu.
+brushColorDropdown.addEventListener("change", () => {
+    crazyColorMode = false;
+    pencilMode = false;
+    
+    if (!pencilMode)
+        customColorMode = true;
+    else
+        customColorMode = false;
+
+    console.log(`custom color mode = ${customColorMode}`);
 });
 
 
@@ -59,6 +76,7 @@ document.querySelector(".clear-button").addEventListener("click", () => {
         box.style.width = `${boxSize}px`;
     });
 });
+
 
 // Sketch resizer
 // Adds an event listener to the sketch resize button. Prompts user for desired size.
@@ -89,14 +107,20 @@ document.querySelector(".sketch-resizer").addEventListener("click", () => {
 
 });
 
+
+
 function boxTouched(boxElement){
     let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    let customColor = brushColorDropdown.value;
 
     if (!crazyColorMode && !pencilMode)
     boxElement.style.backgroundColor = "rgb(0, 0, 0)";
 
     if (crazyColorMode)
         boxElement.style.backgroundColor = `#${randomColor}`;
+
+    if (customColorMode)
+        boxElement.style.backgroundColor = `${customColor}`;
 
     if (pencilMode){
         // parses background-color into 3 integer variables
@@ -122,6 +146,10 @@ function boxTouched(boxElement){
         boxElement.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
     }
 }
+
+
+
+
 
 function clearSketchBox(){
     let element = document.querySelector(".sketch-box");

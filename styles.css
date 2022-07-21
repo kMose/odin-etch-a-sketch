@@ -36,3 +36,81 @@
     justify-content: center;
 }
 
+
+
+select option {
+    margin: 40px;
+    background: rgba(0, 0, 0, 0.3);
+    color: rgb(0, 0, 0);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+  }
+  
+  select option[value="aqua"] {
+    background: aqua;
+  }
+  
+  select option[value="black"] {
+    background: black;
+  }
+  
+  select option[value="blue"] {
+    background: blue;
+  }
+  
+  select option[value="fuchsia"] {
+    background: fuchsia;
+  }
+
+  select option[value="gray"] {
+    background: gray;
+  }
+  
+  select option[value="green"] {
+    background: green;
+  }
+  
+  select option[value="lime"] {
+    background: lime;
+  }
+  
+  select option[value="maroon"] {
+    background: maroon;
+  }
+
+  select option[value="navy"] {
+    background: navy;
+  }
+  
+  select option[value="olive"] {
+    background: olive;
+  }
+  
+  select option[value="orange"] {
+    background: orange;
+  }
+  
+  select option[value="purple"] {
+    background: purple;
+  }
+
+  select option[value="red"] {
+    background: red;
+  }
+  
+  select option[value="silver"] {
+    background: silver;
+  }
+  
+  select option[value="teal"] {
+    background: teal;
+  }
+
+  select option[value="yellow"] {
+    background: yellow;
+  }
+
+  select option[value="white"] {
+    background: white;
+  }
+
+
