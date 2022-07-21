@@ -29,7 +29,6 @@
 
 }
 
-
 .button-row{
     display: flex;
     flex-direction: row;
@@ -45,71 +44,71 @@ select option {
   }
   
   select option[value="aqua"] {
-    background: rgb(0, 255, 255);
+    background: aqua;
   }
   
   select option[value="black"] {
-    background: rgb(0, 0, 0);
+    background: black;
   }
   
   select option[value="blue"] {
-    background: rgb(0, 0, 255);
+    background: blue;
   }
   
   select option[value="fuchsia"] {
-    background: rgb(255, 0, 255);
+    background: fuchsia;
   }
 
   select option[value="gray"] {
-    background: rgb(128, 128, 128);
+    background: gray;
   }
   
   select option[value="green"] {
-    background: rgb(0, 128, 0);
+    background: green;
   }
   
   select option[value="lime"] {
-    background: rgb(0, 255, 0);
+    background: lime;
   }
   
   select option[value="maroon"] {
-    background: rgb(128, 0, 0);
+    background: maroon;
   }
 
   select option[value="navy"] {
-    background: rgb(0, 0, 128);
+    background: navy;
   }
   
   select option[value="olive"] {
-    background: rgb(128, 128, 0);
+    background: olive;
   }
   
   select option[value="orange"] {
-    background: rgb(255, 165, 0);
+    background: orange;
   }
   
   select option[value="purple"] {
-    background: rgb(128, 0, 128);
+    background: purple;
   }
 
   select option[value="red"] {
-    background: rgb(255, 0, 0);
+    background: red;
   }
   
   select option[value="silver"] {
-    background: rgb(192, 192, 192);
+    background: silver;
   }
   
   select option[value="teal"] {
-    background: rgb(0, 128, 128);
+    background: teal;
   }
 
   select option[value="yellow"] {
-    background: rgb(255, 255, 0);
+    background: yellow;
   }
 
   select option[value="white"] {
-    background: rgb(255, 255, 255);
+    background: white;
   }
 
 

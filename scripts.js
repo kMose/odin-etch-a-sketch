@@ -123,13 +123,21 @@ function boxTouched(boxElement){
         boxElement.style.backgroundColor = `${customColor}`;
 
     if (pencilMode){
-        // parses background-color into 3 integer variables
 
+        // checks to see if color is a stored as an rgb value, if not, it goes gray
+        // and starts to darken with each pass
+        if(boxElement.style.backgroundColor.substring(0, 3) != "rgb")
+        {
+            boxElement.style.backgroundColor = `rgb(225, 225, 225)`;
+        }
+
+        // Checks to see if there is no color.
         if (boxElement.style.backgroundColor == "")
         {
             boxElement.style.backgroundColor = `rgb(225, 225, 225)`;
         }
 
+        // parses background-color into 3 integer variables
         let rgbArray = boxElement.style.backgroundColor.split(",");
         let r = parseInt(rgbArray[0].substring(4), 10);
         let g = parseInt(rgbArray[1], 10);
