@@ -1,4 +1,5 @@
 let crazyColorMode = false;
+let pencilMode = false;
 let size = 50;
 
 createSketchBox(size);
@@ -21,14 +22,28 @@ document.querySelector(".grid-button").addEventListener("click", () => {
 
 // Button Listener to toggle crazy color mode.
 document.querySelector(".crazy-color-button").addEventListener("click", () => {
+    pencilMode = false;
+    
     if (!crazyColorMode)
         crazyColorMode = true;
     else
         crazyColorMode = false
 
-    console.log(crazyColorMode);
+    console.log(`crazymode = ${crazyColorMode}`);
 });
 
+
+// Button Listener to toggle pencil mode.
+document.querySelector(".pencil-mode-button").addEventListener("click", () => {
+    crazyColorMode = false;
+    
+    if (!pencilMode)
+        pencilMode = true;
+    else
+        pencilMode = false
+
+    console.log(`pencil mode = ${pencilMode}`);
+});
 
 
 // Sketch resizer
@@ -66,6 +81,8 @@ document.querySelector(".clear-button").addEventListener("click", () => {
 
     let boxElement = document.querySelectorAll(".box");
     boxSize = Math.round(500/size);
+
+    console.log(size);
 
     boxElement.forEach(box => {
         box.style.height = `${boxSize}px`;
