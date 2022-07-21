@@ -6,3 +6,15 @@ change touch by user black background to black back regardless of class, so that
         Make 10 darken classes. Each time its passed over add another class?
         Figure out how to increment HSL value
 
+        make a function that reads hsl values and adds 10% to lightness value.
+            function gets hsl as a parameter
+                read and converts hsl(hue, saturation%, lightness%) lightness value to int.
+
+                Increments int by 10 if value <100
+                return int lightness
+            insert style.backgroundColor = `hue%,sat%, ${lightness}%`
+            
+
+figure out slicing hsl
+    do we need to toArray hsl to slice it.
+

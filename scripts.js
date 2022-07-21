@@ -104,9 +104,11 @@ function boxTouched(boxElement){
     if (crazyColorMode)
         boxElement.style.backgroundColor = `#${randomColor}`;
 
-    if (pencilMode)
-        boxElement.style.backgroundColor = "hsl(0, 0%, 90%)"
-
+    if (pencilMode){
+        let hslSplice = boxElement.style.backgroundColor = `hsl(0, 0%, ${+10}%)`
+        let result = text.slice(11, 14);
+        console.log(result);
+    }
 }
 
 function clearSketchBox(){
