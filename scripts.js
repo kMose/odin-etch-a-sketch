@@ -105,9 +105,7 @@ function boxTouched(boxElement){
         boxElement.style.backgroundColor = `#${randomColor}`;
 
     if (pencilMode){
-        let hslSplice = boxElement.style.backgroundColor = `hsl(0, 0%, ${+10}%)`
-        let result = text.slice(11, 14);
-        console.log(result);
+
     }
 }
 
