@@ -4,8 +4,6 @@ let size = 50;
 
 createSketchBox(size);
 
-
-
 // Button listener to toggle grid boxes.
 document.querySelector(".grid-button").addEventListener("click", () => {
     let boxElement = document.querySelectorAll(".box");
@@ -44,6 +42,7 @@ document.querySelector(".pencil-mode-button").addEventListener("click", () => {
 
     console.log(`pencil mode = ${pencilMode}`);
 });
+
 
 // Listener for clear button
 document.querySelector(".clear-button").addEventListener("click", () => {
@@ -90,12 +89,7 @@ document.querySelector(".sketch-resizer").addEventListener("click", () => {
 
 });
 
-
-
-
-
 function boxTouched(boxElement){
-    boxElement.classList.add("touched-by-user");
     let randomColor = Math.floor(Math.random()*16777215).toString(16);
 
     if (!crazyColorMode && !pencilMode)
@@ -105,19 +99,27 @@ function boxTouched(boxElement){
         boxElement.style.backgroundColor = `#${randomColor}`;
 
     if (pencilMode){
-        let rgbString = boxElement.style.backgroundColor;
-        let rgbArray = rgbString.split(",");
-        let test = parseInt(rgbArray[2], 10);
+        // parses background-color into 3 integer variables
+
+        if (boxElement.style.backgroundColor == "")
+        {
+            boxElement.style.backgroundColor = `rgb(225, 225, 225)`;
+        }
+
+        let rgbArray = boxElement.style.backgroundColor.split(",");
         let r = parseInt(rgbArray[0].substring(4), 10);
         let g = parseInt(rgbArray[1], 10);
         let b = parseInt(rgbArray[2], 10);
 
-        console.log(rgbArray);
-        console.log(r);
-        console.log(g);
-        console.log(b);
+        // Darkens the RGB color by 10%
+        if (r >= 25) r -= 25;
+        if (g >= 25) g -= 25;
+        if (b >= 25) b -= 25;
+        if (r < 24) r = 0;
+        if (g < 24) g = 0;
+        if (b < 24) b = 0;
 
-        
+        boxElement.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
     }
 }
 
