@@ -99,13 +99,25 @@ function boxTouched(boxElement){
     let randomColor = Math.floor(Math.random()*16777215).toString(16);
 
     if (!crazyColorMode && !pencilMode)
-    boxElement.style.backgroundColor = "black";
+    boxElement.style.backgroundColor = "rgb(0, 0, 0)";
 
     if (crazyColorMode)
         boxElement.style.backgroundColor = `#${randomColor}`;
 
     if (pencilMode){
+        let rgbString = boxElement.style.backgroundColor;
+        let rgbArray = rgbString.split(",");
+        let test = parseInt(rgbArray[2], 10);
+        let r = parseInt(rgbArray[0].substring(4), 10);
+        let g = parseInt(rgbArray[1], 10);
+        let b = parseInt(rgbArray[2], 10);
 
+        console.log(rgbArray);
+        console.log(r);
+        console.log(g);
+        console.log(b);
+
+        
     }
 }
 
