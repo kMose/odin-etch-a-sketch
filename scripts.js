@@ -45,6 +45,21 @@ document.querySelector(".pencil-mode-button").addEventListener("click", () => {
     console.log(`pencil mode = ${pencilMode}`);
 });
 
+// Listener for clear button
+document.querySelector(".clear-button").addEventListener("click", () => {
+    clearSketchBox()
+    createSketchBox(size);
+
+    let boxElement = document.querySelectorAll(".box");
+    boxSize = Math.round(500/size);
+
+    console.log(size);
+
+    boxElement.forEach(box => {
+        box.style.height = `${boxSize}px`;
+        box.style.width = `${boxSize}px`;
+    });
+});
 
 // Sketch resizer
 // Adds an event listener to the sketch resize button. Prompts user for desired size.
@@ -75,20 +90,7 @@ document.querySelector(".sketch-resizer").addEventListener("click", () => {
 
 });
 
-document.querySelector(".clear-button").addEventListener("click", () => {
-    clearSketchBox()
-    createSketchBox(size);
 
-    let boxElement = document.querySelectorAll(".box");
-    boxSize = Math.round(500/size);
-
-    console.log(size);
-
-    boxElement.forEach(box => {
-        box.style.height = `${boxSize}px`;
-        box.style.width = `${boxSize}px`;
-    });
-});
 
 
 
@@ -96,8 +98,14 @@ function boxTouched(boxElement){
     boxElement.classList.add("touched-by-user");
     let randomColor = Math.floor(Math.random()*16777215).toString(16);
 
+    if (!crazyColorMode && !pencilMode)
+    boxElement.style.backgroundColor = "black";
+
     if (crazyColorMode)
         boxElement.style.backgroundColor = `#${randomColor}`;
+
+    if (pencilMode)
+        boxElement.style.backgroundColor = "hsl(0, 0%, 90%)"
 
 }
 

@@ -1,8 +1,8 @@
 features to add
----enable/disable grid.
-rainbow rgb mode
+change touch by user black background to black back regardless of class, so that we can overwrite colors without changing the class each time.
+
 "pencil mode" - when pressed - cursor passes over box darken it by 10%
-
-color boxes
-
+    Ideas:
+        Make 10 darken classes. Each time its passed over add another class?
+        Figure out how to increment HSL value
 
